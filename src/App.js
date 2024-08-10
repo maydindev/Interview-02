@@ -1,12 +1,22 @@
-import "./styles.css";
+import React from 'react';
+import { RobotProvider } from './context';
+import RobotInput from './RobotInput';
+import RobotList from './RobotList';
+import './styles.css'; 
 
-import { useState } from "react";
+
 
 function App() {
-  return <RobotList />;
+  return (
+    <RobotProvider>
+      <div className="app-container">      
+        <RobotInput />
+        <p className="title">Robot List</p>
+        <br />
+        <RobotList />
+      </div>
+    </RobotProvider>
+  );
 }
 
-const RobotList = () => {
-  // KODUNUZ BURAYA GELECEK
-};
 export default App;
